@@ -6,18 +6,12 @@ app.use(express.json());
 
 const datastore = new Datastore();
 
-/**
- * Health check
- */
 app.get("/", (req, res) => {
   console.log("Home route hit");
   //   res.send("Cloud Run app is running");
   res.send("Hello World");
 });
 
-/**
- * Store data in Datastore
- */
 app.post("/store", async (req, res) => {
   try {
     console.log("Received data:", req.body);
